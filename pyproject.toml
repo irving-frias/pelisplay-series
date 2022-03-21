@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "pelisplay-series"
+version = "0.1.0"
+description = ""
+authors = []
+packages = [
+    { include = "pelisplay-series", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+isort = "^5.10.1"
+pytest = "^7.1.1"
+mypy = "^0.941"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+skip-string-normalization=true
+line-length=79
+target-version=['py39']
+preview = true
+experimental-string-processing = true
+exclude = '''
+/(
+    /.git
+  | /.mypy_cache
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
