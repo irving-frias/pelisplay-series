@@ -29,6 +29,6 @@ jobs:
       - name: Check format with black
         run: poetry run black --check tests src
       - name: Check type hinting with mypy
-        run: poetry run mypy tests src
+        run: poetry run mypy --install-types --non-interactive tests src
       - name: Unit & Coverage test
         run: poetry run tox
