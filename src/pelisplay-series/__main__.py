@@ -15,15 +15,6 @@ def extract_name(url: str, domain: str = 'www.pelisplay.co') -> str:
     raise ValueError('La URL no es válida')
 
 
-def extract_name(url: str, domain: str = 'www.pelisplay.co') -> str:
-    """Devuelve el nombre de la serie si el dominio es el apropiado"""
-    parsed_url = urlparse(url)
-    last_element = parsed_url.path.split('/')[-1]
-    if parsed_url.hostname == domain:
-        return last_element
-    raise ValueError('La URL no es válida')
-
-
 def ensure_path(base_path: str, prefix: str, path_id: int):
     """Esta función crea el directorio en caso de que no exista"""
     path = os.path.join(base_path, f'{prefix}-{path_id:02d}')
