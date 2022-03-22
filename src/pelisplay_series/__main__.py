@@ -1,9 +1,9 @@
-from argparse import ArgumentParser
 import os
+from argparse import ArgumentParser
 from urllib.parse import urlparse
-from tqdm import tqdm
 
 import requests
+from tqdm import tqdm
 
 
 def extract_name(url: str, domain: str = 'www.pelisplay.co') -> str:
@@ -59,7 +59,9 @@ def main(url: str, path: str):
                 language = optional_chapters['idioma']
                 __chapter__url = __chapter["url"]
                 filename = os.path.join(
-                    episode_path, f'episodio-{episode + 1}-{language}-{index}.txt')
+                    episode_path,
+                    f'episodio-{episode + 1}-{language}-{index}.txt',
+                )
 
                 if os.path.isfile(filename):
                     os.remove(filename)
@@ -72,9 +74,9 @@ if __name__ == '__main__':
     parser = ArgumentParser(
         'Este programa te permite descargar series desde pelisplay.co'
     )
-
-    parser.add_argument('-u', '--url', type=str,
-                        required=True, help='URL de la serie')
+    parser.add_argument(
+        '-u', '--url', type=str, required=True, help='URL de la serie'
+    )
     parser.add_argument(
         '-o',
         '--output',

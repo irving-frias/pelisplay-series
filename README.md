@@ -10,11 +10,11 @@
 Para ejecutar el script puedes hacerlo mediante la siguiente linea de comandos:
 
 ```bash
-python3 pelisplay-series.py --url https://www.pelisplay.co/serie/marvel-m-o-d-o-k
+python3 -m pelisplay-series --url https://www.pelisplay.co/serie/marvel-m-o-d-o-k
 ```
 
 O si quieres almacenarlo en un directorio específico (el default es _pelisplay_) puedes agregar el parámetro:
 
 ```bash
-python3 pelisplay-series.py --url https://www.pelisplay.co/serie/marvel-m-o-d-o-k --output mi_directorio
+python3 -m pelisplay-series --url https://www.pelisplay.co/serie/marvel-m-o-d-o-k --output mi_directorio
 ```
